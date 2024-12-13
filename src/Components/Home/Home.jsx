@@ -13,14 +13,14 @@ import toast from "react-hot-toast";
 import * as jwtDecode from "jwt-decode";
 
 export default function Home() {
-const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
   const [searchProduct, setRelatedProduct] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
   let { addCart } = useContext(cartContext);
   let { AddProductWishlist } = useContext(wishContext);
-
+  let { GetWishlist, counterWishlist } = useContext(wishContext);
+  let { getCarts, CounterCart } = useContext(cartContext);
   const [wishlistStatus, setWishlistStatus] = useState({});
-
 
   const toggleWishlist = (id) => {
     setWishlistStatus((prev) => ({
@@ -90,7 +90,9 @@ const token = localStorage.getItem("token");
   useEffect(() => {
     getProducts();
     getUserId();
-  }, []);
+    getCarts();
+    GetWishlist();
+  }, [getCarts, getCarts, CounterCart, counterWishlist]);
 
   return (
     <>

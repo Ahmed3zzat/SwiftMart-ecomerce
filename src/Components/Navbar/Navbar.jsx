@@ -43,20 +43,13 @@ export default function Navbar() {
     };
   }, []);
 
-  useEffect(() => {
-    if (Token) {
-      getCarts();
-      GetWishlist();
-    }
-  }, [Token]);
-
-  useEffect(() => {
-    if (Theme == "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [Theme]);
+  // useEffect(() => {
+  //   if (Theme == "dark") {
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  // }, [Theme]);
 
   // const handelTheme = () => {
   //   setTheme(Theme === "dark" ? "light" : "dark");
@@ -65,9 +58,9 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`bg-gray-100 border-gray-200 fixed top-0 start-0 end-0 z-[999] transition-all duration-300 shadow-md " ${
+        className={`bg-gray-100 border-gray-200 fixed top-0 start-0 end-0 z-[999] transition-all duration-300 shadow-md lg:px-5 sm:p-0" ${
           isScrolled ? "p-3" : "p-1"
-        } lg:px-5 sm:p-0`}
+        } `}
       >
         <div className="flex justify-between items-center mx-auto p-2 lg:px-0">
           <NavLink
@@ -75,7 +68,9 @@ export default function Navbar() {
             className="logo-img flex gap-1 items-center text-3xl text-green-700 font-bold"
           >
             <i className="fa-solid fa-seedling text-green-500 text-[20px]"></i>
-            <h2 className="font-fontBody tracking-wide text-[20px]">SwiftMart</h2>
+            <h2 className="font-fontBody tracking-wide text-[20px]">
+              SwiftMart
+            </h2>
           </NavLink>
 
           {Token ? (
