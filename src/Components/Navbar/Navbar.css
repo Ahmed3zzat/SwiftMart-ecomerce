@@ -1,0 +1,139 @@
+/* General Styles */
+.navbar {
+  background: linear-gradient(to right, #f3f4f6, #ffffff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: #ffffff;
+  padding: 0.5rem 1rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0d9488;
+  cursor: pointer;
+}
+
+.logo-icon {
+  color: #10b981;
+  font-size: 1.8rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #1f2937;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0d9488;
+}
+
+.auth-buttons,
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-buttons .btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-buttons .btn.login {
+  background: #0d9488;
+  color: #fff;
+}
+
+.auth-buttons .btn.login:hover {
+  background: #0b8068;
+}
+
+.auth-buttons .btn.register {
+  background: transparent;
+  color: #0d9488;
+  border: 1px solid #0d9488;
+}
+
+.auth-buttons .btn.register:hover {
+  background: #0d9488;
+  color: #fff;
+}
+
+.cart-wishlist {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-wishlist .icon {
+  position: relative;
+  font-size: 1.5rem;
+  color: #1f2937;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cart-wishlist .icon:hover {
+  color: #0d9488;
+}
+
+.cart-wishlist .counter {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 0.7rem;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links,
+  .auth-buttons {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+}

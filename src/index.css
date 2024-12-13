@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Comfortaa:wght@300..700&family=Nerko+One&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Comfortaa:wght@300..700&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Nerko+One&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active:not(.logo-img) {
+  border-bottom: 1px solid green;
+  padding: 6px;
+  padding-bottom: 3px;
+  padding-inline: 0;
+  text-shadow: 0px 0px 1px rgba(0, 176, 0, 0.862);
+  font-weight: 500;
+}
+
+.btn {
+  @apply w-full border border-2 border-green-600 py-2 mt-4 text-sm font-medium rounded-b-xl hover:bg-green-600 hover:text-white transition transform translate-y-[200px] duration-700 group-hover:translate-y-[0];
+}
