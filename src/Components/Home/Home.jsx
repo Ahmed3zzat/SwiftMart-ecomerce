@@ -92,7 +92,7 @@ export default function Home() {
     getUserId();
     getCarts();
     GetWishlist();
-  }, [getCarts, getCarts, CounterCart, counterWishlist]);
+  }, [CounterCart, counterWishlist]);
 
   return (
     <>

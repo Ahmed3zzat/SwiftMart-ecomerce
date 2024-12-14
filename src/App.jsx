@@ -127,7 +127,7 @@ export default function App() {
             ),
           },
           { path: "register", element: <Register /> },
-          { path: "login", element: <Login /> },
+          { path: "/login", element: <Login /> },
           { path: "login/forgetPassword", element: <ForgetPass /> },
           { path: "login/resentCode", element: <VerifyReset /> },
           { path: "login/resetPassword", element: <ResetPass /> },

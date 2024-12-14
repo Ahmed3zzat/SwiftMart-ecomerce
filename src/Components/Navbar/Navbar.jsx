@@ -163,7 +163,7 @@ export default function Navbar() {
               <div className="flex gap-6">
                 {/* Wishlist Section */}
                 <div className="relative flex items-center text-gray-700 hover:text-green-800 transition-all duration-300">
-                  <p className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-0.5 shadow-md">
+                  <p className="absolute -top-4 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-0.5 shadow-md">
                     {counterWishlist}
                   </p>
                   <Link
@@ -179,7 +179,7 @@ export default function Navbar() {
 
                 {/* Cart Section */}
                 <div className="relative flex items-center text-gray-700 hover:text-green-800 transition-all duration-300">
-                  <p className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-0.5 shadow-md">
+                  <p className="absolute -top-4 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-0.5 shadow-md">
                     {CounterCart}
                   </p>
                   <Link
@@ -255,14 +255,14 @@ export default function Navbar() {
                     Home
                   </NavLink>
                 </li>
-                <li>
+                {/* <li>
                   <NavLink
                     to="cart"
                     className=" hover:text-black transition-all duration-[0.3s]"
                   >
                     Cart
                   </NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink
                     to="product"
