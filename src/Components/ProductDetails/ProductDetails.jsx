@@ -16,7 +16,13 @@ export default function ProductDetails() {
   const [RelatedCategory, setRelatedCategory] = useState(null);
   const [ErrorMessage, setErrorMessage] = useState("");
   const [ErrorMessage2, setErrorMessage2] = useState("");
+  let { GetWishlist, counterWishlist } = useContext(wishContext);
+  let { getCarts, CounterCart } = useContext(cartContext);
   const navigate = useNavigate();
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+  const sliderRef1 = useRef(null);
+  const sliderRef2 = useRef(null);
 
   const { addCart } = useContext(cartContext);
   let { AddProductWishlist } = useContext(wishContext);
@@ -81,10 +87,7 @@ export default function ProductDetails() {
     getProducts(categoryProduct);
   }, [productId, categoryProduct]);
 
-  const [nav1, setNav1] = useState(null);
-  const [nav2, setNav2] = useState(null);
-  const sliderRef1 = useRef(null);
-  const sliderRef2 = useRef(null);
+
 
   useEffect(() => {
     if (sliderRef1.current && sliderRef2.current) {
@@ -92,6 +95,12 @@ export default function ProductDetails() {
       setNav2(sliderRef2.current);
     }
   }, []);
+
+  useEffect(() => {
+    getCarts();
+    GetWishlist();
+  }, [counterWishlist,CounterCart])
+  
 
   const handleThumbnailClick = (index) => {
     nav1.slickGoTo(index); // Moves the top slider to the clicked image

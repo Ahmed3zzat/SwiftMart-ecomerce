@@ -19,7 +19,7 @@ export default function WishlistContext({ children }) {
       })
       .then((response) => {
         setWishlist(response.data.data);
-        setCounterHeart(response.data.count);
+        setCounterHeart(response.data.data.length);
       })
       .catch((error) => {
         console.log(error.response.data.message);
@@ -35,13 +35,13 @@ export default function WishlistContext({ children }) {
         },
         {
           headers: {
-            token:localStorage.getItem("token"),
+            token: localStorage.getItem("token"),
           },
         }
       )
       .then((response) => {
-        localStorage.setItem("CounterWishlist", response.data.count);
-        setCounterHeart(response.data.count);
+        localStorage.setItem("CounterWishlist", response.data.data.length);
+        setCounterHeart(response.data.data.length);
         return true;
       })
       .catch((error) => {
@@ -58,8 +58,8 @@ export default function WishlistContext({ children }) {
       })
       .then((response) => {
         setWishlist(response.data.data);
-        setCounterHeart(response.data.count);
-        localStorage.setItem("CounterWishlist", response.data.count);
+        setCounterHeart(response.data.data.length);
+        localStorage.setItem("CounterWishlist", response.data.data.length);
         return true;
       })
       .catch((error) => {
